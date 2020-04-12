@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Jose Rene Osso">
+    <title>Visualización de datos del Paro</title>
+
+    <!-- load d3 and dimple libraries -->
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+
+    <!-- add styles to text and graphics -->
+    <style>
+        h1 {
+            background-color: blue;
+            color: floralwhite;
+            font-family: Helvetica, sans-serif;
+            width: 100%;
+            height: 80px;
+            text-align: center;
+            padding-top: 30px;
+        }
+        h2 {
+            font-size: 1.4em;
+            text-transform: uppercase;
+            font-family: Helvetica;
+            color: #000;
+            margin-top: 0;
+        }
+        h3 {
+            font-family: Helvetica, sans-serif;
+            text-align: center;
+        }
+        h4 {
+            font-family: Helvetica, sans-serif;
+            text-align: left;
+        }
+        div.text {
+            font-family: Helvetica;
+            padding: 5px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="main-title"><em>Tasas de Paro Trimestral</em></h1>
+    <h4 class="main-autor">Nombre: Jose Rene Osso</h3>
+    <h4 class="main-url">Url: <a href="https://js-z9ecjx.stackblitz.io">https://js-z9ecjx.stackblitz.io</a></h3>
+    <h4 class="main-fuente">Fuente: <a href="https://www.ine.es/jaxiT3/Tabla.htm?t=4247">https://www.ine.es/jaxiT3/Tabla.htm?t=4247</a></h3>
+    <h4 class="main-fecha">Fecha: 31/12/2019</h4>
+    <br>
+    <br>
+
+    <!-- add intro text to the page body -->
+    <div class="summary">
+        <h2 class="text-title">Resumen</h2>
+        <div class="text">
+    <b>El objetivo</b> de este trabajo es la visualización de la evolución de los datos del paro en trimestral en España desde el año 2002 hasta el 2019 y hacer un comparativo por sex, por edad y por comunidad autónoma. Si ha afectado más a los mayores de 55 años y cómo ha afectado a las Mujeres y a los Hombres.
+    <br>
+    <br>
+
+    <b>La historia</b> que me gustaría contar es que a pesar de lo que pensaba, que el paro afectaba más a los mayores de 55 años, los gráficos demuestran que no fue así que fueron los menores de 19 años los más afectados llegando a ser las tasas de paro mayor de 60%, los mayor de 55 los menos afectados. También se puede notar el efecto de la reforma labor del 2012.
+
+    <div class="metadato  " >
+    <b>La audiencia</b> es el público en general, y toda persona interesada en ver como se ha comportado el paro con los cambios efectuado en la reforma laboral del 28 de junio de 2012.
+
+        </br></br></br></br>              
+
+            </div>
+        </div>
+    </div>
+
+    <!-- add data visualization -->
+    <div class="plot">
+        <!-- The first bar chart -->
+        <h2 class="plot-title">Tasa de Paro Anual</h2>
+        <div class="text">
+         Se usó un gráfico lineal para representar la evolución en el tiempo del porcentaje del paro y fue generado con la herramienta  tableau.
+
+        </div>  
+        <div id="plotContainer1">
+        <a href="https://ibb.co/qsKsmwM"><img src="https://i.ibb.co/d2F2ky0/Dashboard-2.png" alt="Dashboard-2" border="0"></a><br /><a target='_blank' href='https://carinsuranceguru.org/how-to-insure-a-car-with-a-salvage-title-in-texas'></a><br />
+
+        </div>
+         </br></br></br></br> 
+          <h2 class="plot-title">Tasa de Paro por Trimestre Anual</h2>
+        <div id="plotContainer2">
+        <div class="text">
+          Aquí usamos un gráfico de barra vertical a pesar de que el gráfico de barra horizontal era mejor recomendado,  pero al hacer la visualización el primero destacaba mejor. Se usó tableau para este gráfico En este gráfico se nota que que el empleo se mantuvo más o menos estable desde 2do periodo del 2002 y estuvo en sus mejores valores en tercer trimestre del 2007 con un valor de 8,01 %, luego empezó a empeorar hasta el primer trimestre del 2013 que llegó al pico más alto con un valor de 26,94%. En los siguientes periodos el paro a bajado continuamente hasta llegar al ultimo valor que tenemos que es el cuarto trimestre del 2019 con un valor 13,78%.
+
+        </div>  
+       <a href="https://ibb.co/PD12jD5"><img src="https://i.ibb.co/sWsTRWF/Dashboard-1.png" alt="Dashboard-1" border="0"></a>
+       <br/><br/><br/></br>          
+
+        </div>
+       <br/><br/><br/></br>
+        <h2 class="plot-title">Tasa de Paro por Hombres y Mujeres por Trimestral Anual</h2>
+        <div class="text">
+          Aquí se usa un gráfico de área en Google sheet para hacer una comparación entre ambos sexos. En este gráfico podemos notar que las mujeres están más afectadas por el paro que los hombres siendo la diferencia  en algunos casos muy significativa.
+        </div> 
+
+        <div id="plotContainer3">
+        <a href="https://ibb.co/b6NFkWS"><img src="https://i.ibb.co/4F42Hm6/Hombres-y-Mujeres-1.png" alt="Hombres-y-Mujeres-1" border="0"></a>
+        </div>
+        <br/><br/><br/></br>
+        
+        <!-- The second bar chart -->
+        <h2 class="plot-title">Evolucion Total de Tasa de Paro por edad</h2>
+        <div id="plotContainer4">
+          <div class="text">
+              Para la comparación por rango de edad usamos un gráfico de línea múltiple en Google sheet y en él podemos notar que  los menos afectados fueron los mayores de 54 años  al contrario de los menores de 19 años que son los que tienen la tasa del paro más alta. 
+               
+          </div>
+<br>
+ <a href="https://ibb.co/jry8Lcd"><img src="https://i.ibb.co/JsvczfN/Total-Tasa-de-Paro-por-edad.png" alt="Total-Tasa-de-Paro-por-edad" border="0"></a><br />
+ 
+ 
+
+        </div>
+<!-- add outro text to the page body -->
+    <div class="Interpretation"></br></br></br></br></br>
+        <h2 class="text-title">Evolucion de Tasa de Paro por Comunidad Autonoma</h2>
+        <div class="text">
+            <p>Para la comparación por comunidad autónoma se usó un gráfico de línea múltiple generando diferentes gráficos ordenados de comunidad autónoma con mayor tasa de paro a menor tasa de paro. La herramienta utilizada fue tableau.
+            En el gráfico se nota que las comunidades autónomas de Andalucía, Ceuta, Extremadura, Melilla, Canarias y Castilla la Mancha.so las mas afectadas llegando a tener una tasa cercana a 35%  en los años 2011 y 2012 mientras que País vasco, Navarra, Rioja, Aragón, Madrid, Cantabria, Castilla y León, Baleares, Cataluña y Galicia.
+
+</p>
+            </br>
+        </div>
+    </div>
+
+     <div id="plotContainer5"> </br></br></br> 
+<a href="https://ibb.co/cJ7m6Gr"><img src="https://i.ibb.co/D4Sq9xR/Actividad-Guiada-4.png" alt="Actividad-Guiada-4" border="0"></a><br />
+</div>
+
+        </br>
+        </br></br>
+        <br/><br/><br/></br>
+<h2 class="plot-title">Total Tasa de Paro</h2>
+        <div id="plotContainer6">
+          <div class="text">
+              En este gráfico usamos un Mapa de Árbol para representar la acumulacion de tasa de paro por comunidad. Se usa tableau para realizar el gráfico. En el podemos ver que navarra en donde el paro acumulado es el más bajo siendo 10.01%. También se puede notar que el más alto fue Andalucía con 23.91. Luego tenemos 4 grupos. 
+               
+          </div>
+<br>
+ <a href="https://ibb.co/GMs4Pb7"><img src="https://i.ibb.co/3Ff9hL1/Actividad-Guiada-5.png" alt="Actividad-Guiada-5" border="0"></a>        
+        </br>
+    </div>
+
+    
+</body>
+</html>
